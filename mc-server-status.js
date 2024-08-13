@@ -33,7 +33,7 @@
         style.textContent = `
             @font-face {
                 font-family: 'Monocraft';
-                src: url('https://github.com/IdreesInc/Monocraft/releases/download/v4.0/Monocraft.ttc') format('truetype-collection');
+                src: url('Monocraft.ttc') format('truetype-collection');
                 font-weight: normal;
                 font-style: normal;
             }
@@ -41,7 +41,7 @@
             #server-info {
                 display: inline-flex;
                 align-items: center;
-                background: url('https://static.wikia.nocookie.net/minecraft_gamepedia/images/c/c1/Dirt_background_JE2.png/revision/latest?cb=20210507124914');
+                background: url('Dirt_background_JE2.webp');
                 padding: 10px;
                 border-radius: 8px;
                 width: auto; /* Dynamic width */
