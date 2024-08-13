@@ -6,8 +6,16 @@
     <title>Minecraft Server Status</title>
 </head>
 <body>
+    <input type="text" id="serverInput" placeholder="mc.hypixel.net" oninput="updateMinecraftServer()" />
     <minecraft-server src="mc.hypixel.net"></minecraft-server>
-
+    <script>
+        function updateMinecraftServer() {
+            // all this does is let the input change the mc server
+            const serverInput = document.getElementById('serverInput').value;
+            const minecraftServer = document.getElementById('minecraftServer');
+            minecraftServer.setAttribute('src', serverInput);
+        }
+    </script>
     <script src="mc-server-status.js"></script>
 </body>
 </html>
