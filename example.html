@@ -6,17 +6,7 @@
     <title>Minecraft Server Status</title>
 </head>
 <body>
-    Server IP: <input type="text" id="serverInput" placeholder="mc.hypixel.net" oninput="updateMinecraftServer()" />
-    <p></p>
-    <minecraft-server id="minecraftServer" src="mc.hypixel.net"></minecraft-server>
-    <script>
-function updateMinecraftServer() {
-    const serverInput = document.getElementById('serverInput').value;
-    const minecraftServer = document.getElementById('minecraftServer');
-    minecraftServer.src = serverInput;
-}
-
-    </script>
+    <minecraft-server src="mc.hypixel.net"></minecraft-server>
     <script src="mc-server-status.js"></script>
 </body>
 </html>
