@@ -1,4 +1,4 @@
-   class MinecraftServerElement extends HTMLElement {
+class MinecraftServerElement extends HTMLElement {
     constructor() {
         super();
 
@@ -77,10 +77,29 @@
     }
 
     connectedCallback() {
-        const src = this.getAttribute('src');
-        if (src) {
-            this.checkServerStatus(src);
+        if (this.hasAttribute('src')) {
+            this.checkServerStatus(this.src);
         }
+    }
+
+    static get observedAttributes() {
+        return ['src'];
+    }
+
+    attributeChangedCallback(name, oldValue, newValue) {
+        if (name === 'src' && oldValue !== newValue) {
+            this.checkServerStatus(newValue);
+        }
+    }
+
+    // Getter for src attribute
+    get src() {
+        return this.getAttribute('src');
+    }
+
+    // Setter for src attribute
+    set src(value) {
+        this.setAttribute('src', value);
     }
 
     async checkServerStatus(src) {
