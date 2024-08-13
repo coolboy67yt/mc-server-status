@@ -1,4 +1,4 @@
-class MinecraftServerElement extends HTMLElement {
+   class MinecraftServerElement extends HTMLElement {
     constructor() {
         super();
 
@@ -41,7 +41,7 @@ class MinecraftServerElement extends HTMLElement {
             #server-info {
                 display: inline-flex;
                 align-items: center;
-                background: url('Dirt_background_JE2.webp');
+                background: url('Dirt_background_JE2.png');
                 padding: 10px;
                 border-radius: 8px;
                 width: auto; /* Dynamic width */
@@ -77,29 +77,10 @@ class MinecraftServerElement extends HTMLElement {
     }
 
     connectedCallback() {
-        if (this.hasAttribute('src')) {
-            this.checkServerStatus(this.src);
+        const src = this.getAttribute('src');
+        if (src) {
+            this.checkServerStatus(src);
         }
-    }
-
-    static get observedAttributes() {
-        return ['src'];
-    }
-
-    attributeChangedCallback(name, oldValue, newValue) {
-        if (name === 'src' && oldValue !== newValue) {
-            this.checkServerStatus(newValue);
-        }
-    }
-
-    // Getter for src attribute
-    get src() {
-        return this.getAttribute('src');
-    }
-
-    // Setter for src attribute
-    set src(value) {
-        this.setAttribute('src', value);
     }
 
     async checkServerStatus(src) {
