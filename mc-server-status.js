@@ -31,6 +31,13 @@ class MinecraftServerElement extends HTMLElement {
         // Add styles
         const style = document.createElement('style');
         style.textContent = `
+            @font-face {
+                font-family: 'Monocraft';
+                src: url('https://github.com/IdreesInc/Monocraft/releases/download/v4.0/Monocraft.ttc') format('truetype-collection');
+                font-weight: normal;
+                font-style: normal;
+            }
+
             #server-info {
                 display: inline-flex;
                 align-items: center;
