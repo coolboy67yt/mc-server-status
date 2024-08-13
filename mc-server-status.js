@@ -1,4 +1,4 @@
-class MinecraftServerElement extends HTMLElement {
+   class MinecraftServerElement extends HTMLElement {
     constructor() {
         super();
 
@@ -108,12 +108,19 @@ class MinecraftServerElement extends HTMLElement {
                 const motdHtml = statusData.motd.html;
                 motdElement.innerHTML = motdHtml.join(' ');
 
+                // Set title to indicate online status
+                serverInfoElement.setAttribute('title', 'Online');
+
                 serverIconElement.src = faviconUrlObject;
 
                 serverInfoElement.classList.add('online');
                 serverInfoElement.classList.remove('offline');
             } else {
                 nameElement.textContent = src;
+                
+                // Set title to indicate offline status
+                serverInfoElement.setAttribute('title', 'Offline');
+                
                 motdElement.innerHTML = 'Server is offline!';
                 serverIconElement.src = '';
 
